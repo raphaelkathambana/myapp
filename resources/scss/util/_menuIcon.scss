@@ -1,0 +1,23 @@
+.icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(/resources/scss/util/images/listIcon.png);
+        transition: top, right, bottom, left, 200ms ease-in-out;
+    }
+    &:hover::before, &:focus::before {
+        top: calc(0px - -2.5px);
+        bottom: calc(0px - -2.5px);
+        left: calc(0px - -2.5px);
+        right: calc(0px - -2.5px);
+        background-image: url(/resources/scss/util/images/closeIcon.png);
+    }
+
+}

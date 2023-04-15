@@ -1,0 +1,145 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 196, 47);
+    color: darkblue;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post {
+    height: 100px;
+    width: minmax(500px, 900px);
+    background-color: rgb(249, 255, 167);
+}
+.back {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: color, background-image, 200ms ease-in-out;
+    &-icon {
+        width: 30px;
+        height: 30px;
+        background-image: url(/resources/scss/util/images/back.png);
+        &:hover {
+            background-image: url(/resources/scss/util/images/doubleBack.png);
+        }
+    }
+    &-icon::after {
+        content: "Back";
+        position: absolute;
+        visibility: hidden;
+        left: 0;
+        transition: left 200ms ease-out;
+    }
+    &-icon:hover::after {
+        visibility: visible;
+        left: 30px;
+        color: antiquewhite;
+    }
+}
+.edit {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: color, background-image, 200ms ease-in-out;
+    &-icon {
+        width: 30px;
+        height: 30px;
+        background-image: url(/resources/scss/util/images/edit.png);
+        &:hover {
+            background-image: url(/resources/scss/util/images/editFile.png);
+        }
+    }
+    &-icon::after {
+        content: "Edit";
+        position: absolute;
+        visibility: hidden;
+        left: 0;
+        transition: left 200ms ease-out;
+    }
+    &-icon:hover::after {
+        visibility: visible;
+        left: 35px;
+        color: antiquewhite;
+    }
+}
+.cont {
+    padding: 0px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & .cloc {
+        display: flex;
+    }
+}
+.flex {
+    display: flex;
+    width: 100%;
+    &-jc-a {
+        justify-content: space-around;
+    }
+    &-column {
+        flex-direction: column;
+    }
+    &.gap {
+        gap: 10px;
+    }
+    &.medium {
+        width: 250px;
+        height: 100px;
+        padding-top: 20px;
+    }
+}
+input[value="Delete"] {
+    background-color: transparent;
+    border: none;
+    transition: color, background-image, 200ms ease-in-out;
+    background-image: url(/resources/scss/util/images/icons8_File_Delete_30px.png);
+    width: 30px;
+    height: 30px;
+    color: transparent;
+    &:hover {
+        background-image: url(/resources/scss/util/images/icons8_Unavailable_30px.png);
+    }
+}
+// .delete {
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     transition: color, background-image, 200ms ease-in-out;
+//     &-icon {
+//         width: 30px;
+//         height: 30px;
+//         background-image: url(/resources/scss/util/images/icons8_File_Delete_30px.png);
+//         &:hover {
+//             background-image: url(/resources/scss/util/images/icons8_Unavailable_30px.png);
+//         }
+//     }
+//     &-icon::after {
+//         content: "";
+//         position: absolute;
+//         visibility: hidden;
+//         left: 0;
+//         transition: left 200ms ease-out;
+//     }
+//     &-icon:hover::after {
+//         visibility: visible;
+//         left: 35px;
+//         color: antiquewhite;
+//     }
+// }
